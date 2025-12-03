@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ایردراپ توکن نونا | NONA</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Fredoka+One&display=swap" rel="stylesheet">
+
+<!-- Core meta (editable) -->
+<meta name="description" content="🎁 ایردراپ توکن نونا با جوایز تا ۵ میلیون توکن رایگان! شرکت در مسابقه، دعوت دوستان و دسترسی به پلتفرم تمرینی نونا." />
+<meta name="keywords" content="ایردراپ, توکن نونا, نونا, ارز دیجیتال, airdrop, nona, آموزش کریپتو, تمرین معامله, نوجوانان" />
+<meta name="author" content="NONA Platform" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph / Twitter (example images should be updated to real URLs) -->
+<meta property="og:title" content="ایردراپ توکن نونا | جوایز تا ۵ میلیون توکن" />
+<meta property="og:description" content="شرکت کنید و از جوایز میلیونی ایردراپ نونا بهره‌مند شوید — پلتفرم آموزشی و تمرینی برای نوجوانان." />
+<meta property="og:image" content="https://nonaplatform.com/images/social-preview.jpg" />
+<meta property="og:url" content="https://nonaplatform.com/airdrop" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+/* ------------ Basic layout & typography ------------ */
+* { box-sizing:border-box; margin:0; padding:0; font-family: 'Vazirmatn','Fredoka One', system-ui, sans-serif; }
+body { background: url('images/nona-background.png') no-repeat center center fixed; background-size: cover; color:#222; line-height:1.6; padding:0; }
+header { 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  padding:12px 18px; 
+  background:rgba(255,255,255,0.80);
+  position: relative; /* اضافه شده */
+}
+
+/* لوگو */
+header img { 
+  height:220px; 
+  object-fit:contain;
+  flex-shrink: 0; /* جلوگیری از کوچک شدن */
+}
+
+/* متن خوش آمدگویی - جدید */
+.welcome-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.welcome-text h2 {
+  color: #FF6F61;
+  font-size: 2.2rem; /* درشت */
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(255, 111, 97, 0.3);
+  white-space: nowrap;
+  background: linear-gradient(45deg, #FF6F61, #667eea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* دکمه‌های زبان */
+.lang-buttons { 
+  display:flex; 
+  gap:8px;
+  flex-shrink: 0; /* جلوگیری از کوچک شدن */
+}
+.lang-buttons a { 
+  display:inline-block; 
+  padding:8px 12px; 
+  border-radius:8px; 
+  color:#fff; 
+  text-decoration:none; 
+  font-weight:700;
+  transition: all 0.3s ease;
+}
+.lang-buttons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.lang-buttons a.farsi { background:#28A745; }
+.lang-buttons a.en { background:#007BFF; }
+
+/* container */
+.container { max-width:1050px; margin:26px auto; padding:22px; background: rgba(255,255,255,0.80); border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+
+/* header hero */
+h1 { text-align:center; color:#FF6F61; font-size:2.6rem; margin-bottom:10px; line-height:1.25; }
+h1 .line { display:block; font-size:1.6rem; margin:6px 0; font-weight:700; }
+
+/* prize image */
+.prize { display:block; margin:18px auto; max-width:86%; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
+
+/* buttons */
+.actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:18px 0; }
+.actions a { text-decoration:none; padding:12px 20px; border-radius:12px; color:#fff; font-weight:800; font-size:1.05rem; transition: all 0.3s ease; }
+.actions a:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.actions a.start { background:#28A745; }
+.actions a.channel { background:#007BFF; }
+.actions a.eth { background:#FF6F61; }
+
+/* date & timer */
+.date-info { text-align:center; font-size:1.05rem; color:#333; margin-bottom:10px; font-weight:700; }
+.timer { text-align:center; font-size:1.25rem; color:#d43f2a; font-weight:900; margin:10px 0 18px 0; }
+
+/* leaderboard */
+.table-wrap { overflow-x:auto; margin:18px 0; }
+.leaderboard { width:100%; border-collapse:collapse; min-width:620px; }
+.leaderboard th, .leaderboard td { border:1px solid #e6e6e6; padding:10px 12px; text-align:center; font-size:1.05rem; }
+.leaderboard th { background:#FF6F61; color:#fff; font-weight:800; }
+.leaderboard td.emoji { font-size:1.6rem; }
+.leaderboard tr:nth-child(even) { background:#f9f9f9; }
+.leaderboard tr:hover { background:#ffe6e0; }
+
+/* info sections */
+.section { margin:20px 0; font-size:1.05rem; color:#2b2b2b; }
+.section h2 { color:#FF6F61; font-size:1.25rem; margin-bottom:8px; }
+.section h3 { color:#333; margin-top:12px; margin-bottom:6px; font-size:1.1rem; }
+.section ul { margin-right:18px; margin-top:8px; list-style:disc; }
+
+/* FAQ */
+.faq { background:#f8f9fa; padding:14px; border-radius:10px; }
+details summary { cursor:pointer; padding:10px; background:#ff6f61; color:#fff; border-radius:8px; font-weight:700; transition: all 0.3s ease; }
+details summary:hover { background:#e65c50; }
+details p{ padding:10px; background:#fff; border-radius:8px; margin-top:8px; }
+
+/* trust & CTA */
+.trust { background:#fff; padding:14px; border-radius:10px; margin-top:14px; box-shadow:0 6px 18px rgba(0,0,0,0.03); }
+.trust ul { margin-right:14px; }
+.final-cta { text-align:center; margin-top:26px; padding:26px; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; border-radius:14px; }
+.final-cta a { 
+  display:inline-block; 
+  margin-top:12px; 
+  padding:12px 24px; 
+  background:#fff; 
+  color:#3640a1; 
+  text-decoration:none; 
+  border-radius:40px; 
+  font-weight:800;
+  transition: all 0.3s ease;
+}
+.final-cta a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .welcome-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 820px){
+  header { 
+    flex-wrap: wrap; 
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  header img { 
+    height: 70px; 
+    margin-bottom: 10px;
+  }
+  
+  .welcome-text {
+    position: static;
+    transform: none;
+    order: 2;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .welcome-text h2 {
+    font-size: 1.5rem;
+    white-space: normal;
+    padding: 0 10px;
+  }
+  
+  .lang-buttons {
+    order: 3;
+    margin-top: 10px;
+  }
+  
+  h1 { font-size:1.8rem; }
+  .prize { max-width:95%; }
+  .leaderboard th, .leaderboard td { font-size:0.95rem; padding:8px; }
+  .timer { font-size:1.05rem; }
+}
+
+@media (max-width: 480px) {
+  .welcome-text h2 {
+    font-size: 1.2rem;
+  }
+  
+  header img {
+    height: 60px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h1 .line {
+    font-size: 1.2rem;
+  }
+  
+  .actions a {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="assets/logo.png" alt="لوگو نونا" />
+  <div class="welcome-text">
+    <h2>🎉 به سایت نونا خوش آمدید 🎉</h2>
+  </div>
+  <div class="lang-buttons">
+    <a href="index_fa.html" class="farsi">فارسی</a>
+    <a href="index.html" class="en">EN</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO / PRIZES (4 lines) -->
+  <h1>
+    <span class="line">🏆 جایزه بزرگ ایردراپ توکن نونا — رایگان</span>
+    <span class="line">🥇 جایزه نفر اول: ۵,۰۰۰,۰۰۰ توکن — رایگان</span>
+    <span class="line">🥈 جایزه نفر دوم: ۲,۰۰۰,۰۰۰ توکن — رایگان</span>
+    <span class="line">🥉 جایزه نفر سوم: ۵۰۰,۰۰۰ توکن — رایگان</span>
+  </h1>
+
+  <!-- prize image (placeholder) -->
+  <img src="images/prize.png" alt="جایزه نفر اول - 5 میلیون توکن" class="prize" />
+
+  <!-- registration dates (this is ABOVE the timer as requested) -->
+  <div class="date-info" id="registration-dates">
+    <!-- editable in JS below -->
+  </div>
+
+  <!-- timer -->
+  <div class="timer" id="countdown">⏰ زمان باقی‌مانده: </div>
+
+  <!-- action buttons -->
+  <div class="actions">
+    <a class="start" href="https://t.me/NonaCoinbot" target="_blank">🚀 شروع</a>
+    <a class="channel" href="https://t.me/NonaPortal" target="_blank">📢 کانال</a>
+    <a class="eth" href="https://etherscan.io/token/0x131746d64B7CF18aF47040fc49137C5896164c45" target="_blank">🔍 مشاهده توکن</a>
+  </div>
+
+  <!-- leaderboard -->
+  <div class="table-wrap">
+    <table class="leaderboard" aria-label="لیست کاربران برتر">
+      <thead>
+        <tr>
+          <th>رتبه</th>
+          <th>کاربر</th>
+          <th>دعوت‌ها</th>
+          <th>توکن کل</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body">
+        <!-- Filled by JS (from Google Script or fallback sample) -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Info / Long content (SEO-friendly) -->
+  <article class="section" id="about">
+    <h2>🎯 درباره این ایردراپ</h2>
+    <p>این ایردراپ بخشی از پروژه بزرگ‌تر <strong>نونا</strong> است که هدفش ایجاد یک محیط تمرینی واقعی و امن برای نوجوانان و علاقه‌مندان تازه‌کار به بازار رمزارزها می‌باشد. با استفاده از این ایردراپ، شرکت‌کننده‌ها توکن رایگان دریافت کرده و می‌توانند در پلتفرم آموزشی نونا تجربه معاملاتی کسب کنند.</p>
+
+    <h2>🧠 نونا فقط ایردراپ نیست</h2>
+    <p>پس از ایردراپ، برندگان دسترسی به پلتفرم تمرینی نونا خواهند داشت که به والدین اجازه می‌دهد مقادیر کنترل‌شده‌ای از سرمایه را برای فرزندان اختصاص دهند تا با خطر کمتر معامله کردن را یاد بگیرند.</p>
+
+    <h3>💡 پلتفرم تمرینی نونا چیست؟</h3>
+    <ul>
+      <li>یک محیط واقعی‌نما برای یادگیری ترید و مدیریت سرمایه</li>
+      <li>قابلیت تنظیم سقف و نظارت والدین</li>
+      <li>ابزارهای ساده برای تحلیل و گزارش دهی آموزشی</li>
+    </ul>
+
+    <h3>📋 مراحل بعد از برنده‌شدن</h3>
+    <ul>
+      <li>دریافت توکن‌ها در کیف پول کاربر</li>
+      <li>فعال‌سازی دسترسی به پلتفرم تمرینی</li>
+      <li>شروع فعالیت آموزشی و معامله با مقادیر کنترل‌شده</li>
+    </ul>
+
+    <h3>⚠️ نکات مهم</h3>
+    <ul>
+      <li>توکن‌های دریافتی پس از لیست شدن در صرافی‌ها قابل معامله خواهند بود</li>
+      <li>هدف پروژه آموزش و تجربه‌ است؛ هیچ تضمینی برای سوددهی نیست</li>
+      <li>شرکت‌کنندگان زیر ۱۸ سال تنها با نظارت والدین مجاز به شرکت هستند</li>
+    </ul>
+  </article>
+
+  <!-- FAQ -->
+  <section class="section faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">❓ سوالات متداول</h2>
+
+    <details>
+      <summary>چطور در ایردراپ شرکت کنم؟</summary>
+      <p>روی دکمه «🚀 شروع» کلیک کنید، وارد ربات @NonaCoinbot شوید و دستورالعمل‌های ثبت‌نام را دنبال کنید تا کد دعوت اختصاصی دریافت کنید.</p>
+    </details>
+
+    <details>
+      <summary>آیا ثبت‌نام رایگان است؟</summary>
+      <p>بله، شرکت در ایردراپ کاملاً رایگان است و نیازی به پرداخت وجه یا داشتن کیف پول در ابتدای ثبت‌نام نیست.</p>
+    </details>
+
+    <details>
+      <summary>آیا توکن‌ها قابل معامله هستند؟</summary>
+      <p>پس از لیست شدن توکن در صرافی‌ها (طبق نقشه راه پروژه) امکان معامله وجود خواهد داشت. تا پیش از لیست، توکن صرفاً آموزشی است.</p>
+    </details>
+  </section>
+
+  <!-- Trust signals -->
+  <aside class="trust">
+    <h3>✅ تضمین‌های ما</h3>
+    <ul>
+      <li>🔒 شفافیت کامل در تراکنش‌ها و قراردادها</li>
+      <li>📜 قرارداد هوشمند قابل مشاهده در Etherscan</li>
+      <li>👨‍👩‍👧‍👦 پشتیبانی و تمرکز بر آموزش خانواده‌ها</li>
+    </ul>
+  </aside>
+
+  <!-- Final CTA -->
+  <div class="final-cta" role="region" aria-label="CTA">
+    <h2>🎁 همین الان شروع کنید!</h2>
+    <p>هر دقیقه تاخیر = از دست دادن شانس برنده‌شدن</p>
+    <a href="https://t.me/NonaCoinbot" target="_blank" rel="noopener">🚀 ورود به ربات</a>
+  </div>
+
+</main>
+
+<script>
+/* =========================
+   CONFIG (Edit these)
+   ========================= */
+// Google Apps Script URL (replace with your script URL if different)
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzn2KNAZAD1sNnIDtGYvY7LbGokLS6JCcHbRiZyAU0SN4lzvBVH7P22TUasks-7Kcs7/exec';
+
+// Registration dates (display text shown above timer)
+// You can edit these strings directly to any format you prefer.
+const registrationFarsi = 'ثبت‌نام فارسی زبانان: ۱۰ آذر ۱۴۰۴ تا ۳۰ آذر ۱۴۰۴';
+const registrationEnglish = 'International registration: Dec 22, 2025 to jan 20, 2026';
+
+// Timer end date (ISO string / Gregorian). Edit to the actual end datetime in UTC or local time.
+const TIMER_END_ISO = '2026-01-10T23:59:59'; // e.g. '2026-01-10T23:59:59'
+
+/* =========================
+   Initialize UI (dates + timer)
+   ========================= */
+document.getElementById('registration-dates').textContent = registrationFarsi + ' | ' + registrationEnglish;
+
+// Countdown timer
+const countdownEl = document.getElementById('countdown');
+const endTime = new Date(TIMER_END_ISO).getTime();
+
+function updateCountdown(){
+  const now = Date.now();
+  const diff = endTime - now;
+  if(diff <= 0){
+    countdownEl.textContent = 'ایردراپ به پایان رسید!';
+    return;
+  }
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff / (1000*60*60)) % 24);
+  const minutes = Math.floor((diff / (1000*60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  countdownEl.textContent = `⏰ زمان باقی‌مانده: ${days} روز ${hours} ساعت ${minutes} دقیقه ${seconds} ثانیه`;
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+/* =========================
+   Leaderboard: try fetch from Google Script,
+   if fails -> fallback sample data
+   ========================= */
+
+const SAMPLE_DATA = [
+  {username:'Zohreh303', invites:1, tokens:725},
+  {username:'Nona620', invites:2, tokens:700},
+  {username:'Ali392', invites:1, tokens:625},
+  {username:'Tina974', invites:0, tokens:525},
+  {username:'Madin311', invites:0, tokens:525},
+  {username:'User6', invites:0, tokens:500},
+  {username:'User7', invites:0, tokens:500},
+  {username:'User8', invites:0, tokens:500},
+  {username:'User9', invites:0, tokens:500},
+  {username:'User10', invites:0, tokens:500}
+];
+
+async function loadLeaderboard(){
+  const tbody = document.getElementById('leaderboard-body');
+  tbody.innerHTML = '<tr><td colspan="4">در حال بارگذاری...</td></tr>';
+  try{
+    const res = await fetch(GOOGLE_SCRIPT_URL, {cache: "no-store"});
+    if(!res.ok) throw new Error('Google Script not available');
+    const data = await res.json();
+
+    // Expecting array of objects with fields: username, reward_referral (or invites), reward_total (or tokens)
+    if(!Array.isArray(data) || data.length===0){
+      throw new Error('No data from script');
+    }
+
+    // Map & normalize fields (try different possible field names)
+    const normalized = data.map(d => {
+      return {
+        username: d.username || d.user || (d.telegram_id ? `user_${d.telegram_id}` : 'unknown'),
+        invites: d.reward_referral ?? d.invites ?? d.referred_count ?? 0,
+        tokens: d.reward_total ?? d.tokens ?? d.reward_total ?? 0
+      };
+    });
+
+    renderLeaderboard(normalized.slice(0,10));
+  }catch(err){
+    console.warn('Google Script load failed, using sample data:', err);
+    renderLeaderboard(SAMPLE_DATA);
+  }
+}
+
+function renderLeaderboard(list){
+  const tbody = document.getElementById('leaderboard-body');
+  tbody.innerHTML = '';
+  list.forEach((item, idx) => {
+    const emoji = idx===0 ? '🥇' : idx===1 ? '🥈' : idx===2 ? '🥉' : `${idx+1}️⃣`;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="emoji">${emoji}</td><td>@${escapeHtml(String(item.username))}</td><td>${escapeHtml(String(item.invites))}</td><td>${escapeHtml(String(item.tokens))}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// small helper to avoid injection in user-supplied fields
+function escapeHtml(str){
+  return str.replace(/[&<>"'`=\/]/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','/':'&#x2F;','`':'&#x60;','=':'&#x3D;'}[s]));
+}
+
+loadLeaderboard();
+</script>
+
+</body>
+</html>
